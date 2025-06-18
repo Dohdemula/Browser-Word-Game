@@ -39,7 +39,7 @@ const GamePage = () => {
   // Generate a new asteroid
   const createAsteroid = useCallback(() => {
     const word = getRandomWord();
-    const x = Math.random() * 80 + 10; // 10% to 90% of screen width
+    const x = Math.random() * 80 + 10; // start from 10% to 90% of screen width
     const size = Math.max(60, Math.min(120, word.length * 10)); // Larger size based on word length
     const speed = ASTEROID_FALL_TIME + (Math.random() * 2 - 1); // Slight variation in speed
 
