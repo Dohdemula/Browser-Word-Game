@@ -1,0 +1,41 @@
+.gamePage {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, 
+    var(--space-black) 0%, 
+    var(--deep-space) 30%, 
+    var(--cosmic-blue) 70%, 
+    var(--space-black) 100%
+  );
+}
+
+/* Nebula effect */
+.gamePage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(15, 52, 96, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(26, 26, 46, 0.4) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .gamePage {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .stars::before,
+  .stars::after {
+    display: none;
+  }
+} 

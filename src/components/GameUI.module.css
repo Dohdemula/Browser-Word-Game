@@ -1,0 +1,264 @@
+.gameUI {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.topUI {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.scoreContainer {
+  background: rgba(26, 26, 46, 0.9);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: 12px;
+  border: 2px solid var(--star-yellow);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.scoreLabel {
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  color: var(--text-gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.scoreValue {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--star-yellow);
+  text-shadow: 0 0 20px var(--star-yellow);
+}
+
+.controls {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.controlBtn {
+  font-size: 0.9rem;
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.inputArea {
+  position: absolute;
+  bottom: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 500px;
+  pointer-events: auto;
+}
+
+.inputContainer {
+  position: relative;
+  margin-bottom: var(--spacing-md);
+}
+
+.wordInput {
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+  background: rgba(26, 26, 46, 0.9);
+  border: 2px solid var(--star-yellow);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  font-family: var(--font-primary);
+  letter-spacing: 1px;
+}
+
+.wordInput:focus {
+  border-color: var(--planet-green);
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
+}
+
+.typingIndicator {
+  position: absolute;
+  right: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.typingIndicator.active {
+  opacity: 1;
+}
+
+.cursor {
+  width: 2px;
+  height: 20px;
+  background: var(--star-yellow);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.instruction {
+  text-align: center;
+  color: var(--text-gray);
+  font-size: 0.9rem;
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gameOver {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  backdrop-filter: blur(5px);
+}
+
+.gameOverContent {
+  background: rgba(26, 26, 46, 0.95);
+  padding: var(--spacing-xxl);
+  border-radius: 20px;
+  border: 3px solid var(--meteor-orange);
+  text-align: center;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: gameOverAppear 0.5s ease-out;
+}
+
+@keyframes gameOverAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.gameOverTitle {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--meteor-orange);
+  text-shadow: 0 0 30px var(--meteor-orange);
+  margin-bottom: var(--spacing-lg);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.finalScore {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  color: var(--text-gray);
+  margin-bottom: var(--spacing-xl);
+}
+
+.scoreHighlight {
+  color: var(--star-yellow);
+  text-shadow: 0 0 20px var(--star-yellow);
+  font-weight: 900;
+}
+
+.gameOverButtons {
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gameOverBtn {
+  font-size: 1.1rem;
+  padding: var(--spacing-md) var(--spacing-xl);
+  min-width: 150px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .topUI {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+  }
+
+  .scoreContainer {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .scoreValue {
+    font-size: 1.5rem;
+  }
+
+  .controlBtn {
+    font-size: 0.8rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .inputArea {
+    bottom: 140px;
+    max-width: 90%;
+  }
+
+  .wordInput {
+    font-size: 1rem;
+  }
+
+  .gameOverContent {
+    padding: var(--spacing-lg);
+    margin: var(--spacing-md);
+  }
+
+  .gameOverTitle {
+    font-size: 2rem;
+  }
+
+  .finalScore {
+    font-size: 1.2rem;
+  }
+
+  .gameOverButtons {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .gameOverBtn {
+    font-size: 1rem;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scoreValue {
+    font-size: 1.2rem;
+  }
+
+  .gameOverTitle {
+    font-size: 1.5rem;
+  }
+
+  .finalScore {
+    font-size: 1rem;
+  }
+} 
