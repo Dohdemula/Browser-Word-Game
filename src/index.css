@@ -38,24 +38,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--deep-space);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--nebula-purple);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--star-yellow);
-}
-
 /* Button styles */
 .btn {
   font-family: var(--font-primary);

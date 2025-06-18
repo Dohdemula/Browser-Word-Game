@@ -39,20 +39,13 @@ const HomePage = () => {
             <ul>
               <li>Asteroids will fall from space with words written on them</li>
               <li>Type the word exactly as shown on the asteroid</li>
+              <li>Press Enter to submit your answer</li>
               <li>Destroy asteroids before they reach your planet</li>
               <li>One collision = Game Over!</li>
             </ul>
           </div>
 
-          <div className={styles.section}>
-            <h2>⚡ Tips</h2>
-            <ul>
-              <li>Focus on the closest asteroids first</li>
-              <li>Don't panic - accuracy is more important than speed</li>
-              <li>Watch out for longer words - they're worth more points!</li>
-              <li>Your planet is counting on you!</li>
-            </ul>
-          </div>
+          
         </div>
 
         <button 

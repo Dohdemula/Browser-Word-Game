@@ -43,7 +43,6 @@ You are a peaceful planet floating in the vast cosmos. Suddenly, a deadly rain o
    ```
 
 2. **Install dependencies**
-   ```bash
    npm install
    ```
 

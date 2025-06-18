@@ -17,7 +17,7 @@
     0 0 30px rgba(0, 255, 136, 0.5),
     inset 4px 4px 15px rgba(255, 255, 255, 0.2),
     inset -4px -4px 15px rgba(0, 0, 0, 0.3);
-  animation: float 4s ease-in-out infinite;
+  /* animation: float 4s ease-in-out infinite; */
 }
 
 .atmosphere {

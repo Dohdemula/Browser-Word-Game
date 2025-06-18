@@ -112,16 +112,21 @@ const GamePage = () => {
           // Calculate planet's Y position (bottom of screen minus offset minus radius)
           const planetY = screenDimensions.height - PLANET_BOTTOM_OFFSET - PLANET_RADIUS;
           
-          // Check if asteroid has reached the planet's Y level
-          if (asteroidY >= planetY - PLANET_RADIUS) {
+          // Check if asteroid has reached the planet's Y level (with some tolerance)
+          if (asteroidY >= planetY - PLANET_RADIUS - (asteroid.size / 2)) {
             // Calculate horizontal distance between asteroid and planet center
             const planetCenterX = 50; // Planet is centered at 50%
             const asteroidX = asteroid.x; // Asteroid X position in percentage
             const horizontalDistance = Math.abs(asteroidX - planetCenterX);
             
-            // Check if asteroid is within the planet's radius horizontally
-            const planetRadiusPercent = (PLANET_RADIUS / screenDimensions.height) * 100; // Convert to percentage
-            if (horizontalDistance <= planetRadiusPercent) {
+            // Convert planet radius to percentage based on screen width
+            const planetRadiusPercent = (PLANET_RADIUS / screenDimensions.width) * 100;
+            
+            // Convert asteroid size to percentage based on screen width
+            const asteroidSizePercent = (asteroid.size / screenDimensions.width) * 100;
+            
+            // Check if asteroid is within the planet's radius horizontally (including asteroid size)
+            if (horizontalDistance <= planetRadiusPercent + (asteroidSizePercent / 2)) {
               // Actual collision detected!
               collision = true;
               asteroid.isDestroyed = true;
@@ -154,7 +159,7 @@ const GamePage = () => {
 
       return newAsteroids;
     });
-  }, [gameOver, screenDimensions.height]);
+  }, [gameOver, screenDimensions.height, screenDimensions.width]);
 
   // Update asteroid positions
   const updateAsteroids = useCallback(() => {
