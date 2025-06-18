@@ -122,6 +122,39 @@
   margin-top: var(--spacing-lg);
   color: var(--text-gray);
   font-style: italic;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.madeByButton {
+  font-size: 0.9rem;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: transparent;
+  color: var(--text-gray);
+  border: 1px solid var(--text-gray);
+  font-weight: 400;
+  text-transform: none !important;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.madeByButton:hover {
+  background: var(--text-gray);
+  color: var(--space-black);
+  border-color: var(--text-white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.githubIcon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
 }
 
 /* Responsive design */
@@ -144,6 +177,16 @@
     font-size: 1.1rem;
     padding: var(--spacing-md) var(--spacing-xl);
   }
+
+  .madeByButton {
+    font-size: 0.8rem;
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
+
+  .githubIcon {
+    width: 14px;
+    height: 14px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -157,5 +200,15 @@
 
   .section {
     padding: var(--spacing-sm);
+  }
+
+  .madeByButton {
+    font-size: 0.7rem;
+    padding: 4px var(--spacing-sm);
+  }
+
+  .githubIcon {
+    width: 12px;
+    height: 12px;
   }
 } 
