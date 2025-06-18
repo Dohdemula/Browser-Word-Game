@@ -1,4 +1,4 @@
- 'Talkative Planet'
+** 'Talkative Planet'**
 
 You SHOUT words to destroy asteroids before they crash into your planet! What could be more FUN!
 
